@@ -43,7 +43,7 @@ will generate all the training and evaluation files.
 Similarly,
 ```
 cd data/en_ch/
-bash run.sh en.txt ch_tra.txt 6000 6000
+bash run.sh en.txt ch.txt 6000 6000
 ```
 will generate all the training and evaluation files for the Engilsh-Chinese language pair.
 
@@ -71,6 +71,7 @@ You will see the spearman correlation score of SCWS/BCWS during the training pro
 
 To evaluate the trained models:
 ```
+cd en_de/ or cd en_ch/
 bash dump.sh path_to_ckpt
 ```
 will evaluate the SCWS/BCWS again and dump the trained sense embeddings.
