@@ -1,1 +1,4 @@
-python2.7 main.py --dataset_dir ../data/en_ch/ --log_path log.txt --save_dir log/ --major_weight 0.7 --reg_weight 1.0
+if [ ! -d $1 ]; then
+	  mkdir $1
+fi
+python2.7 main.py --dataset_dir ../data/en_ch/ --log_path $1.txt --save_dir $1/ --major_weight $2 --reg_weight $3

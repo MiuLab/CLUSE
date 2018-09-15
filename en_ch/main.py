@@ -189,7 +189,7 @@ def getEmbedding(sess, dh, batch_size, ss, sense_mat, selected_indices, scws=Fal
                                                         ss.eval_mode:True,
                                                         ss.bi_info:tf.SparseTensorValue([[0,0]], [0], [1,1]),
                                                         ss.lengths:[0 for _ in range(context_window*2+batch_size)],
-                                                        ss.contextual_weight:major_weight,
+                                                        ss.major_weight:major_weight,
                                                         ss.reg_weight:reg_weight})
 
         for k in xrange(sense_dim):
@@ -294,7 +294,7 @@ def train(lang):
                     ss.bi_info:tf.SparseTensorValue(input_feed['bi_loc'], input_feed['bi_indices'], input_feed['bi_shape']),
                     ss.lengths:input_feed['bi_lengths'],
                     ss.eval_mode:False,
-                    ss.contextual_weight:major_weight,
+                    ss.major_weight:major_weight,
                     ss.reg_weight:reg_weight
                     })
     
@@ -304,7 +304,7 @@ def train(lang):
                     bi_ss.bi_info:tf.SparseTensorValue(input_feed['bi_loc'], input_feed['bi_indices'], input_feed['bi_shape']),
                     bi_ss.lengths:input_feed['bi_lengths'],
                     bi_ss.eval_mode:True, # no bilingual information
-                    bi_ss.contextual_weight:major_weight,
+                    bi_ss.major_weight:major_weight,
                     bi_ss.reg_weight:reg_weight
                     })
     
@@ -333,6 +333,7 @@ def train(lang):
         ss.bi_info:tf.SparseTensorValue(input_feed['bi_loc'], input_feed['bi_indices'], input_feed['bi_shape']),
         ss.lengths:input_feed['bi_lengths'],
         ss.eval_mode:False,
+        ss.major_weight:major_weight,
         ss.reg_weight:reg_weight
         })
     
@@ -348,6 +349,7 @@ def train(lang):
         bi_ss.target_sense_sampled_indices:bi_target_selected, 
         bi_ss.lengths:input_feed['bi_lengths'],
         bi_ss.eval_mode:True,
+        bi_ss.major_weight:major_weight,
         bi_ss.reg_weight:reg_weight
         })
     

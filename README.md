@@ -77,12 +77,8 @@ will evaluate the SCWS/BCWS again and dump the trained sense embeddings.
 
 To decode the sense for a specific word with its context,
 ```
-cd en_de/
-bash decode.sh major_weight path_to_ckpt
-```
-```
-cd en_ch/
-bash decode.sh major_weight path_to_ckpt
+cd en_de/ or cd en_ch/
+bash decode.sh path_to_ckpt
 ```
 Note that we only allow for English input currently.
 
