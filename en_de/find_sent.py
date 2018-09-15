@@ -12,11 +12,6 @@ from emb import embedding
 
 def load_arguments():
     argparser = argparse.ArgumentParser(sys.argv[0])
-    argparser.add_argument("--major_weight",
-            type = float,
-            required=True,
-            help = "weight for major contextual vector"
-        )
     argparser.add_argument("--lr_rate",
             type = float,
             default = 0.025,
@@ -80,7 +75,6 @@ sense_dim = args.sense_number
 embedding_dim = args.selection_dim
 sense_embedding_dim = args.representation_dim
 dataset_prefix = args.dataset_dir
-major_weight = args.major_weight
 ckpt_path = args.ckpt_path
 
 # read in data
@@ -126,7 +120,7 @@ def getEmbedding(sess, dh, batch_size, ss, sense_mat, selected_indices, scws=Fal
                                                         ss.eval_mode:True,
                                                         ss.bi_info:tf.SparseTensorValue([[0,0]], [0], [1,1]),
                                                         ss.lengths:[0 for _ in range(context_window*2+batch_size)],
-                                                        ss.contextual_weight:major_weight})
+                                                        ss.major_weight:0.0})
         for k in xrange(sense_dim):
             selected_s_input_indices = []
             for i in xrange(batch_size):
@@ -253,7 +247,7 @@ def decode(sent, idx, lang):
                                                 ss.eval_mode:True,
                                                 ss.bi_info:tf.SparseTensorValue([[0,0]], [0], [1,1]),
                                                 ss.lengths:[0 for _ in range(context_window*2+batch_size)],
-                                                ss.contextual_weight:major_weight})
+                                                ss.major_weight:0.0})
     print (sense_probability[0].tolist())
 
 gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=args.memory)

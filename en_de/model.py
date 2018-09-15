@@ -31,15 +31,15 @@ class sense_selection(object):
         sense_indices = tf.placeholder(tf.int32, [(context_window*2+batch_size) * sense_dim])
         self.context_indices = context_indices
         self.sense_indices = sense_indices
-        contextual_weight = tf.placeholder(tf.float32)
+        major_weight = tf.placeholder(tf.float32)
         reg_weight = tf.placeholder(tf.float32)
-        self.contextual_weight = contextual_weight
+        self.major_weight = major_weight
         self.reg_weight = reg_weight
         embedded_context = self.dense_lookup(w_in, context_indices)
         bi_embedded_context = self.sparse_lookup(bi_w_in, bi_info, self.lengths)
 
         # Combine bilingual contextual information
-        embedded_context = tf.cond(eval_mode, lambda:tf.identity(embedded_context), lambda:tf.add(embedded_context, bi_embedded_context))
+        embedded_context = tf.cond(eval_mode, lambda:tf.identity(embedded_context), lambda:tf.add(major_weight*embedded_context, (1-major_weight)*bi_embedded_context))
 
         # [(context_window*2+batch_size), sense_dim, embedding_dim]
         embedded_word_output = tf.nn.embedding_lookup(w_out, context_indices[:, context_window])
