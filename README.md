@@ -10,6 +10,7 @@ CLUSE is an unsupervised learning framework for *crosslingual sense embeddings*,
 * [opencc-python-reimplemented](https://github.com/yichen0831/opencc-python)
 * [zhon](https://zhon.readthedocs.io/en/latest/)
 * [jieba](https://github.com/fxsjy/jieba)
+* [nltk](https://www.nltk.org/)
 * [Tensorflow 1.10](https://www.tensorflow.org/versions/r1.10/) with CUDA 9.0 and CuDNN v7.0.5
 
 ## Get training & evaluation datasets
@@ -28,7 +29,7 @@ All the data are in the data/ directory. You can safely download the preprocesse
 
 Or you can preprocess the data by yourself.
 
-First put the *dataset.txt* and *bi_ratings.txt* from [BCWS](https://github.com/MiuLab/BCWS) into *data/en_ch/*.
+First put the *dataset.txt* and *bcws.txt* from [BCWS](https://github.com/MiuLab/BCWS) into *data/en_ch/*.
 Then put the *ratings.txt* from [SCWS](https://www.socher.org/index.php/Main/ImprovingWordRepresentationsViaGlobalContextAndMultipleWordPrototypes) into *data/en_ch/* and *data/en_de/*.
 
 Since this work requires parallel corpus, you have to prepare two files for each language pair. These two files should have the same number of lines, such that the sentences with same line number form a paralle setence pair.

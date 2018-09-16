@@ -7,13 +7,13 @@ word2id = dict()
 def extractLocation(context,word):
 	line = context.strip().split(' ')
 	location = -1
-	for j in xrange(len(line)):
+	for j in range(len(line)):
 		if line[j] == '<b>':
 			location = j
 			line = line[:j]+[line[j+1]]+line[j+3:]
 			break
 	if line[location]!=word:
-		print line[location], word
+		print (line[location], word)
 	return location, line
 
 def smooth(context):
@@ -38,8 +38,6 @@ def smooth(context):
 		i+=1
 	return ' '.join(line)
 
-if len(sys.argv) != 3:
-	print 'usage: python makeTest.py test.in test.out'
 vocab = sys.argv[1]
 testInFile = sys.argv[2]
 testOutFile = sys.argv[3]
@@ -56,7 +54,6 @@ wordCount = 0
 UNKCount = 0
 with open(testInFile) as infp, open(testOutFile,'w') as outfp:
         for e,line in enumerate(infp):
-                #print e
                 line = line.strip().lower()
                 line = line.split('\t')
                 id = line[0]
@@ -78,7 +75,7 @@ with open(testInFile) as infp, open(testOutFile,'w') as outfp:
                                 found = True
                                 break
                 if not found:
-                        print context1
+                        print (context1)
                 found = False
                 for sentence in context2:
                         if '<b>' in sentence and '</b>' in sentence:
@@ -86,7 +83,7 @@ with open(testInFile) as infp, open(testOutFile,'w') as outfp:
                                 found = True
                                 break
                 if not found:
-                        print context2
+                        print (context2)
                 
                 aveR = (line[7])
                 Rs = map(float,line[8:])
@@ -103,7 +100,7 @@ with open(testInFile) as infp, open(testOutFile,'w') as outfp:
                 offset = 0
                 data = []
                 tempData = []
-                for i in xrange(len(context1)):
+                for i in range(len(context1)):
                         if context1[i] in word2id:
                                 tempData.append(context1[i])
                                 data.append(word2id[context1[i]])
@@ -124,7 +121,7 @@ with open(testInFile) as infp, open(testOutFile,'w') as outfp:
                 
                 offset = 0
                 data = []
-                for i in xrange(len(context2)):
+                for i in range(len(context2)):
                         if context2[i] in word2id:
                                 data.append(word2id[context2[i]])
                         else:
@@ -141,4 +138,4 @@ with open(testInFile) as infp, open(testOutFile,'w') as outfp:
                 outfp.write(str(location2-offset)+'\n')
                 data = map(str,data)
                 outfp.write(' '.join(data)+'\n')
-print wordCount, float(UNKCount)/wordCount
+print (wordCount, float(UNKCount)/wordCount)
