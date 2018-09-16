@@ -93,7 +93,7 @@ class sense_representation_learning(object):
             self.embedded_sense_input = embedded_sense_input
             embedded_sense_output = tf.nn.embedding_lookup(s_out, selected_sense_output_indices)
             self.embedded_sense_output = embedded_sense_output
-            bi_embedded_sense_output = tf.nn.embedding_lookup(s_out, selected_bi_sense_output_indices)
+            bi_embedded_sense_output = tf.nn.embedding_lookup(bi_s_mat, selected_bi_sense_output_indices)
 
             self.reward_sense_prob = tf.sigmoid(tf.reduce_sum(tf.multiply(embedded_sense_input, embedded_sense_output), 1))
             self.bi_reward_sense_prob = tf.sigmoid(tf.reduce_sum(tf.multiply(embedded_sense_input, bi_embedded_sense_output), 1))
