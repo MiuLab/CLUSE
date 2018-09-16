@@ -76,7 +76,7 @@ def load_arguments():
         )
     argparser.add_argument("--memory",
             type = float,
-            default = 0.1,
+            default = 0.15,
             help = "GPU memory fraction used for model training"
         )
     argparser.add_argument("--ckpt_threshold",
