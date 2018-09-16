@@ -166,9 +166,9 @@ class data_helper(object):
             try:
                 line = map(int, line.strip().split(' '))
                 bi_line = map(int, bi_line.strip().split(' '))
-                #if len(bi_line) > 20:
-                #    sampled_idx = np.sort(np.random.permutation(range(len(bi_line)))[:20])
-                #    bi_line = [bi_line[i] for i in sampled_idx]
+                if len(bi_line) > 20:
+                    sampled_idx = np.sort(np.random.permutation(range(len(bi_line)))[:20])
+                    bi_line = [bi_line[i] for i in sampled_idx]
             except:
                 continue
             if len(line) == 0 or len(bi_line) == 0:
