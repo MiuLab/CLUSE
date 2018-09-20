@@ -39,7 +39,7 @@ For example, to prepare the training and evaluation data for the Engilsh-German 
 cd data/en_ch/
 bash run.sh english_parallel german_parallel english_vocab_size german_vocab_size
 ```
-To reproduce the result in the paper,
+To reproduce the results in the [paper](https://arxiv.org/abs/1809.05694),
 ```
 bash run.sh europarl-v7.de-en.en europarl-v7.de-en.de 6000 6000
 ```
@@ -62,7 +62,7 @@ For example,
 ```
 bash train.sh log 0.5 1.0
 ```
-will train the model and save the checkpoint files to *log* directory with the specified major weight and regularization weight. For details, please refer to the [paper]().
+will train the model and save the checkpoint files to *log* directory with the specified major weight and regularization weight. For details, please refer to the [paper](https://arxiv.org/abs/1809.05694).
 
 Similarly,
 ```
@@ -93,7 +93,7 @@ Please cite [[1]]() if you found the resources in this repository useful and cit
 
 ### CLUSE: Cross-Lingual Unsupervised Sense Embeddings
 
-[1] Ta-Chung Chi and Yun-Nung Chen, [*CLUSE: Cross-Lingual Unsupervised Sense Embeddings*]()
+[1] Ta-Chung Chi and Yun-Nung Chen, [*CLUSE: Cross-Lingual Unsupervised Sense Embeddings*](https://arxiv.org/abs/1809.05694)
 
 ```
 @inproceedings{chi-chen:2018:EMNLP2018,
