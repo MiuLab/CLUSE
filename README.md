@@ -1,5 +1,5 @@
 ## CLUSE: Cross-Lingual Unsupervised Sense Embeddings
-![Model](https://i.imgur.com/IEhTXFU.png)
+![Model](https://www.csie.ntu.edu.tw/~miulab/images/project/cluse.jpg)
 
 CLUSE is an unsupervised learning framework for *crosslingual sense embeddings*, whose goal is to provide the community with:
 * state-of-the-art multilingual sense embeddings where the embeddings are aligned in a common space
