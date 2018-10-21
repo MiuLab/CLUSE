@@ -88,6 +88,17 @@ bash decode.sh path_to_ckpt
 ```
 Note that we only allow for English input currently.
 
+## Results (AvgSimC / MaxSimC)
+| Model   | Bilingual Weight | Bilingual (BCWS) |
+| ---     | :-:   | :-:         |
+| Luong et al. (2015) | - | 50.4 |
+| Conneau et al. (2017) | - | 54.7 |
+| CLUSE   | 0.1   | 58.3 / 58.3 |
+|         | 0.3   | 58.8 / 58.8 |
+|         | 0.5   | 58.5 / 58.5 |
+|         | 0.7   | 58.3 / 58.4 |
+|         | 0.9   | 58.3 / 58.3 |
+
 ## References
 Please cite [[1]]() if you found the resources in this repository useful and cite [[2]]() if you use the BCWS dataset.
 
