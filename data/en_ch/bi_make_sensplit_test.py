@@ -25,18 +25,17 @@ for line in en_vocab:
     ID = line[1]
     en_word2id[word] = ID
 
-dataset = open('dataset.txt', encoding='utf-8').read().splitlines()
+dataset = open('bcws.txt', encoding='utf-8').read().splitlines()
 en_sents = []
 ch_sents = []
+scores = []
 startIdx = list(range(0, len(dataset)//4, 1))
 for idx in startIdx:
     ch_sent = dataset[idx*4+1]
     en_sent = dataset[idx*4+2]
     ch_sents.append(ch_sent)
     en_sents.append(en_sent)
-
-scores = open('bcws.txt').read().splitlines()
-scores = list(map(float, scores))
+    scores.append(float(dataset[idx*4+3].split()[-1]))
 
 out = open('bi_ratings.txt', 'w')
 

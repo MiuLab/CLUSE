@@ -169,7 +169,7 @@ def evaluate_bcws(sess, en_dh, ch_dh, batch_size, en_ss, ch_ss, en_srl, ch_srl):
     global global_bavgSimC
     
     [en_senseVec, en_senseScore] = getEmbedding(sess, en_dh, batch_size, en_ss, en_srl.embedded_sense_input, en_srl.selected_sense_input_indices)
-    [ch_senseVec, ch_senseScore] = getEmbedding(sess, ch_dh, batch_size, ch_ss, ch_srl.embedded_sense_output, ch_srl.selected_sense_output_indices)
+    [ch_senseVec, ch_senseScore] = getEmbedding(sess, ch_dh, batch_size, ch_ss, ch_srl.embedded_sense_input, ch_srl.selected_sense_input_indices)
     
     assert en_dh.test_score == ch_dh.test_score
     avgSimC = calAvgSimC(en_dh.test_score, en_senseVec, en_senseScore, ch_senseVec, ch_senseScore)

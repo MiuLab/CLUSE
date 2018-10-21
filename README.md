@@ -29,14 +29,14 @@ All the data are in the data/ directory. You can safely download the preprocesse
 
 Or you can preprocess the data by yourself.
 
-First put the *dataset.txt* and *bcws.txt* from [BCWS](https://github.com/MiuLab/BCWS) into *data/en_ch/*.
+First put the *bcws.txt* from [BCWS](https://github.com/MiuLab/BCWS) into *data/en_ch/*.
 Then put the *ratings.txt* from [SCWS](https://www.socher.org/index.php/Main/ImprovingWordRepresentationsViaGlobalContextAndMultipleWordPrototypes) into *data/en_ch/* and *data/en_de/*.
 
 Since this work requires parallel corpus, you have to prepare two files for each language pair. These two files should have the same number of lines, such that the sentences with same line number form a paralle setence pair.
 
 For example, to prepare the training and evaluation data for the Engilsh-German language pair,
 ```
-cd data/en_ch/
+cd data/en_de/
 bash run.sh english_parallel german_parallel english_vocab_size german_vocab_size
 ```
 To reproduce the results in the [paper](https://arxiv.org/abs/1809.05694),
@@ -89,7 +89,7 @@ bash decode.sh path_to_ckpt
 Note that we only allow for English input currently.
 
 ## References
-Please cite [[1]]() if you found the resources in this repository useful and cite [[2]]() if you use the BCWS dataset.
+Please cite [[1]](https://arxiv.org/abs/1809.05694) if you found the resources in this repository useful and cite [[2]]() if you use the BCWS dataset.
 
 ### CLUSE: Cross-Lingual Unsupervised Sense Embeddings
 
