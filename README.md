@@ -100,7 +100,7 @@ Note that we only allow for English input currently.
 |         | 0.9   | 58.3 / 58.3 |
 
 ## References
-Please cite [[1]](https://arxiv.org/abs/1809.05694) if you found the resources in this repository useful and cite [[2]]() if you use the BCWS dataset.
+Please cite [[1]](https://arxiv.org/abs/1809.05694) if you found the resources in this repository useful and cite [[2]](https://arxiv.org/abs/1810.08951) if you use the BCWS dataset.
 
 ### CLUSE: Cross-Lingual Unsupervised Sense Embeddings
 
@@ -120,7 +120,7 @@ Please cite [[1]](https://arxiv.org/abs/1809.05694) if you found the resources i
 
 ### BCWS: Bilingual Contextual Word Similarity
 
-[2] Ta-Chung Chi, Ching-Yen Shih and Yun-Nung Chen, [*BCWS: Bilingual Contextual Word Similarity*]()
+[2] Ta-Chung Chi, Ching-Yen Shih and Yun-Nung Chen, [*BCWS: Bilingual Contextual Word Similarity*](https://arxiv.org/abs/1810.08951)
 
 ```
 @article{bcws,
