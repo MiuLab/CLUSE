@@ -25,7 +25,7 @@ Get cross-lingual sense embeddings evaluation dataset: [BCWS](https://github.com
 Please cite the corresponding papers if you use the above datasets.
 
 ## Data preprocessing
-All the data are in the data/ directory. You can safely download the preprocessed data from [here]().
+All the data are in the data/ directory. You can safely download the preprocessed data from [here](ftp://miulab.myds.me/CLUSE/data.zip).
 
 Or you can preprocess the data by yourself.
 
